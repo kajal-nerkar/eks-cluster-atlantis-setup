@@ -19,3 +19,32 @@ module "eks" {
   # Manage IAM roles externally
   manage_aws_auth = false
 }
+
+resource "kubernetes_config_map" "aws_auth" {
+  metadata {
+    name      = "aws-auth"
+    namespace = "kube-system"
+  }
+
+  data = {
+    mapRoles = yamlencode([
+      {
+        rolearn  = module.eks.worker_iam_role_arns[0]
+        username = "system:node:{{EC2PrivateDNSName}}"
+        groups   = ["system:bootstrappers", "system:nodes"]
+      },
+      {
+        rolearn  = module.iam.eks_admin_role_arn
+        username = "eks-admin"
+        groups   = ["system:masters"]
+      },
+      {
+        rolearn  = module.iam.eks_readonly_role_arn
+        username = "eks-read-only"
+        groups   = ["system:authenticated"]
+      }
+    ])
+  }
+
+  depends_on = [module.eks, module.iam]
+}

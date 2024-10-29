@@ -1,9 +1,9 @@
 # eks-cluster-atlantis-setup
 
-## Overview
-Objective: Deploy an EKS cluster and the Atlantis application using Terraform and Helm, integrated with your GitHub repository.
+## Overview:
+Deploy an EKS cluster and the Atlantis application using Terraform and Helm, integrated with your GitHub repository.
 
-##Tools Used:
+## Tools Used:
 Terraform: Infrastructure as Code (IaC) tool for provisioning AWS resources.
 Helm: Package manager for Kubernetes to deploy applications like Atlantis.
 AWS EKS: Managed Kubernetes service by AWS.

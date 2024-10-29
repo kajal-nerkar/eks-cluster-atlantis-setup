@@ -1,0 +1,13 @@
+# values.tmpl.yaml
+
+github:
+  user: atlantis[bot]
+  token: ${github_token}
+  webhookSecret: atlantis-webhook-secret
+
+  repositories:
+    - ${github_repo_owner}/${github_repo_name}
+
+atlantis:
+  service:
+    type: LoadBalancer

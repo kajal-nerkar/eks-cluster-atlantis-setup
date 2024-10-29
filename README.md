@@ -4,10 +4,10 @@
 Deploy an EKS cluster and the Atlantis application using Terraform and Helm, integrated with your GitHub repository.
 
 ## Tools Used:
-Terraform: Infrastructure as Code (IaC) tool for provisioning AWS resources.
-Helm: Package manager for Kubernetes to deploy applications like Atlantis.
-AWS EKS: Managed Kubernetes service by AWS.
-Atlantis: Tool for automating Terraform workflows via pull requests.
+1. **Terraform:** Infrastructure as Code (IaC) tool for provisioning AWS resources.
+2. **Helm:** Package manager for Kubernetes to deploy applications like Atlantis.
+3. **AWS EKS:** Managed Kubernetes service by AWS.
+4. **Atlantis:** Tool for automating Terraform workflows via pull requests.
 
 ## Project Structure
 ```
